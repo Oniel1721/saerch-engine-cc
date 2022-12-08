@@ -1,9 +1,4 @@
-import express from 'express'
-const app = express()
-
-app.get('/', (req, res) => {
-    res.send('Everything ok!')
-})
+import app from './app'
 
 app.listen(5500, () => {
     console.log('Server on port 5500')
