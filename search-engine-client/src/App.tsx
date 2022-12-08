@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Product } from './features'
 
 const routes = [
   {
     path: '/',
-    element: <h1>Products search engine</h1>
+    element: <Product.SearchProductsPage />
   }
 ]
 
