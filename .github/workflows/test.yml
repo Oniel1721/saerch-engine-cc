@@ -10,7 +10,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Install dependencies
+      - name: Install api dependencies
         run: cd ./search-engine-api && yarn install
       - name: Run api tests
         run: cd ./search-engine-api && yarn test
+      - name: Install client dependencies
+        run: cd ./search-engine-client && yarn install
+      - name: Run client tests
+        run: cd ./search-engine-client && yarn test
