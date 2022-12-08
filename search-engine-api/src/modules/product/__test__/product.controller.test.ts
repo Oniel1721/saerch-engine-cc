@@ -1,11 +1,11 @@
 import express from "express";
 import request from "supertest";
-import { doesPartialMatch } from "../../../utils/text-matcher";
 import productController from '../product.controller'
+import { doesPartialMatch } from "../../../utils/text-matcher";
 
 describe("/api/products/search", () => {
     const app = express()
-    app.use('/api/products', productController) 
+    app.use('/', productController) 
     test('Response with an Array', async ()=>{
         const res = await request(app).get('/search')
         expect(res.body).toBeInstanceOf(Array)
