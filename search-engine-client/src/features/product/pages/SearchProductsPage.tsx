@@ -19,7 +19,7 @@ export const SearchProductsPage = ()=>{
             <h1>Products search engine</h1>
             <SearchInput onSearch={onSearch} />
         </header>
-        <section>
+        <section className="results-container">
             <Searching value={query} isSearching={isLoading} />
             {
                 products && <SearchResults products={products} />

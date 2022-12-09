@@ -9,9 +9,16 @@ describe('Searching', ()=>{
         render(<Searching isSearching value='' />)
     })
 
-    it('Should not display when isSearching is false', async ()=>{
-        const element = Searching({isSearching: false, value: '1'})
-        expect(element).toBeNull()
+    it('Should have opacity 0 when isSearching is false', async ()=>{
+        render(<Searching isSearching={false} value='' />)
+        const element = await screen.findByRole('searching')
+        expect(Number(element.style.opacity)).toBe(0)
+    })
+
+    it('Should have opacity 1 when isSearching is true', async ()=>{
+        render(<Searching isSearching value='3' />)
+        const element = await screen.findByRole('searching')
+        expect(Number(element.style.opacity)).toBe(1)
     })
 
     it('Should display when isSearching is true with text Searching: {value}', async ()=>{

@@ -1,22 +1,27 @@
 import type { Product } from "../types"
 import { ProductCard } from "./ProductCard"
+import './styles/SearchResults.css'
 
 interface Props {
     products: Product[]
 }
 
 export const SearchResults = ({ products }: Props)=>{
-    return <article>
+    return <>
         {
             products.length
             ? (
-                products.map((product)=>(
-                    <ProductCard key={product.id} product={product} />
-                ))
+                <article>
+                    {
+                        products.map((product)=>(
+                            <ProductCard key={product.id} product={product} />
+                        ))
+                    }
+                </article>
             )
             : (
-                <h3>No products found</h3>
+                <h3 className="not-found">No products found</h3>
             )
         }
-    </article>
+    </>
 }

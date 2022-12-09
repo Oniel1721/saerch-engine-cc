@@ -10,9 +10,20 @@ main {
   align-items: center;
   height: 8rem;
   background-color: var(--second-bg);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
-h1 {
+.header h1 {
   font-size: 3.6rem;
   margin-left: 3rem;
+}
+
+.results-container {
+  display: flex;
+  position: relative;
+  min-height: calc(100vh - 8rem);
+  flex-direction: column;
 }
