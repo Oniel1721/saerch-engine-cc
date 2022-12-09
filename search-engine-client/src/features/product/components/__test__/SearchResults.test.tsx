@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react'
-import { afterEach, describe, it } from 'vitest'
+import { afterEach, describe, expect, it } from 'vitest'
 import { Product } from '../../types'
 import { SearchResults } from '../SearchResults'
 
@@ -10,6 +10,11 @@ const product: Product = {
     shortDescription: 'Some short description',
     photo: 'Photo url'
 }
+
+const products = [
+    product,
+    {...product, id: 2}
+]
 
 describe('Searching', ()=>{
     afterEach(cleanup)
@@ -24,7 +29,8 @@ describe('Searching', ()=>{
     })
 
     it('Should appears cards when array have products', async ()=>{
-        render(<SearchResults products={[product, {...product, id: 2}]} />)
-        await screen.findByRole('product-card')
+        render(<SearchResults products={products} />)
+        const cards = await screen.findAllByRole('product-card')
+        expect(cards).toHaveLength(products.length)
     })
 })

@@ -5,5 +5,17 @@ interface Props {
 }
 
 export const SearchResults = ({ products }: Props)=>{
-    return null
+    return <article>
+        {
+            products.length
+            ? (
+                products.map((product)=>(
+                    <figure role='product-card' key={product.id}></figure>
+                ))
+            )
+            : (
+                <h3>No products found</h3>
+            )
+        }
+    </article>
 }
