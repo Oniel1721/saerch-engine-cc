@@ -11,7 +11,7 @@ export const SearchResults = ({ products }: Props)=>{
         {
             products.length
             ? (
-                <article>
+                <article className="cards-container">
                     {
                         products.map((product)=>(
                             <ProductCard key={product.id} product={product} />
