@@ -1,0 +1,17 @@
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: calc(100vh - 5rem);
+}
+
+.product-details-title {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.product-details-photo,
+.product-details-info {
+  max-width: 102.4rem;
+  font-size: 2rem;
+}
