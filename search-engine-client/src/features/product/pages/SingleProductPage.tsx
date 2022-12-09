@@ -7,7 +7,7 @@ import './styles/SingleProductPage.css'
 export const SingleProductPage = ()=>{
     const product = useProductByPageId()
     
-    return <main>
+    return <main className='product-details-page'>
         <Link className='go-back' to="/">Go back</Link>
         {
             product && <ProductDetails product={product} />
