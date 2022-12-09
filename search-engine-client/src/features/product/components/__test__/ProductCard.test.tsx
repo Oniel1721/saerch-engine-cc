@@ -26,7 +26,7 @@ describe('Searching', ()=>{
     it('Should render title and it should be an anchor for that especific product page', async ()=>{
         render(<ProductCard product={product} />)
         const title = await screen.findByText(product.title) as HTMLAnchorElement
-        expect(title.href).toBe(`/product/${product.id}`)
+        expect(title.href).toBe(`/products/${product.id}`)
     })
 
     it('Should render shortDescription', async ()=>{
