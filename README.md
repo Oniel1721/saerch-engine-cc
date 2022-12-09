@@ -39,7 +39,7 @@ yarn test:watch // Run all tests in app watching for changes to keep running it
 If you don't have enough time to install the project here you can watch some screenshots about it.
 
 ![Initial View Desktop](/images/initial-desktop.png)
-![Initial View Mobile](/images/initial-mobile.png.png)
+![Initial View Mobile](/images/initial-mobile.png)
 ![Search View Desktop](/images/search-desktop.png)
 ![Search View Mobile](/images/search-mobile.png)
 ![Not Found View Desktop](/images/not-found-desktop.png)
