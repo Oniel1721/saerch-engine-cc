@@ -1,14 +1,15 @@
 import { useState } from "react"
 import { Searching } from "../components/Searching"
 import { SearchInput } from "../components/SearchInput"
+import { useSearchProducts } from "../hooks"
 
 export const SearchProductsPage = ()=>{
-    const [ value, setValue ] = useState('')
-    const [ isSearching, setIsSearching ] = useState(false)
+    const [ query, setQuery ] = useState('')
+
+    const { data, isLoading } = useSearchProducts(query)
 
     const onSearch = (newValue: string)=>{
-        setValue(newValue)
-        setIsSearching(true)
+        setQuery(newValue)
     }
     
     return <main>
@@ -16,7 +17,7 @@ export const SearchProductsPage = ()=>{
             <SearchInput onSearch={onSearch} />
         </header>
         <section>
-            <Searching value={value} isSearching={isSearching} />
+            <Searching value={query} isSearching={isLoading} />
         </section>
     </main> 
 }
