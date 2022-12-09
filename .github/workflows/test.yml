@@ -17,4 +17,4 @@ jobs:
       - name: Install client dependencies
         run: cd ./search-engine-client && yarn install
       - name: Run client tests
-        run: cd ./search-engine-client && yarn test run
+        run: cd ./search-engine-client && yarn test
