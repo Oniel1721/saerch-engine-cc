@@ -16,7 +16,7 @@ export const SearchProductsPage = ()=>{
     
     return <main>
         <header className="header">
-            <h1>Products search engine</h1>
+            <h1>Search engine</h1>
             <SearchInput onSearch={onSearch} />
         </header>
         <section className="results-container">
