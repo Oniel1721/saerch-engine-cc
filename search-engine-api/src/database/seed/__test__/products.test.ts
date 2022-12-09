@@ -1,13 +1,6 @@
-import { readFileSync } from 'fs'
-import { join } from 'path'
+import { products } from '../products'
 
 describe('Test products.json', ()=>{
-    let products: any;
-    
-    test('Can product.json content parsed with JSON.parse', ()=>{
-        const procuctsPath = join(__dirname,'../','products.json')
-        products = JSON.parse(readFileSync(procuctsPath).toString())
-    })
     
     test('Products is an array', ()=>{
         expect(products).toBeInstanceOf(Array)

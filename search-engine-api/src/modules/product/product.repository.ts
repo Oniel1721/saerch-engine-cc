@@ -1,11 +1,8 @@
-import { readFileSync } from 'fs'
-import { join } from 'path'
+import { products } from '../../database/seed/products'
 import { Product } from "./product.interfaces"
 
 export const getAllProducts = (): Product[]=>{
-    const productPath = join(process.cwd(), 'src', 'database', 'seed', 'products.json')
-    const products = JSON.parse(readFileSync(productPath).toString())
-    return products
+    return JSON.parse(JSON.stringify(products)) as Product[]
 }
 
 export const getProductById = (id: number): Product | null=>{
