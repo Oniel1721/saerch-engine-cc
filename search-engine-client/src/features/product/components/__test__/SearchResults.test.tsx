@@ -1,4 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { afterEach, describe, expect, it } from 'vitest'
 import { Product } from '../../types'
 import { SearchResults } from '../SearchResults'
@@ -16,7 +17,7 @@ const products = [
     {...product, id: 2}
 ]
 
-describe('Searching', ()=>{
+describe('SearchResults', ()=>{
     afterEach(cleanup)
 
     it('Should render', ()=>{
@@ -29,7 +30,7 @@ describe('Searching', ()=>{
     })
 
     it('Should appears cards when array have products', async ()=>{
-        render(<SearchResults products={products} />)
+        render(<SearchResults products={products} />, { wrapper: BrowserRouter })
         const cards = await screen.findAllByRole('product-card')
         expect(cards).toHaveLength(products.length)
     })
