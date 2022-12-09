@@ -5,5 +5,13 @@ interface Props {
 }
 
 export const ProductDetails = ({ product }: Props) => {
-    return null
+    return (
+        <figure>
+            <img src={product.photo} alt={product.title} />
+            <figcaption>
+                <h1>{product.title}</h1>
+                <p>{product.description}</p>
+            </figcaption>
+        </figure>
+    )
 }
