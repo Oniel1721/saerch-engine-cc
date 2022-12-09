@@ -5,6 +5,10 @@ const routes = [
   {
     path: '/',
     element: <Product.SearchProductsPage />
+  },
+  {
+    path: '/products/:id',
+    element: <Product.SingleProductPage />
   }
 ]
 
