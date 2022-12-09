@@ -1,4 +1,5 @@
 import type { Product } from "../types"
+import { ProductCard } from "./ProductCard"
 
 interface Props {
     products: Product[]
@@ -10,7 +11,7 @@ export const SearchResults = ({ products }: Props)=>{
             products.length
             ? (
                 products.map((product)=>(
-                    <figure role='product-card' key={product.id}></figure>
+                    <ProductCard key={product.id} product={product} />
                 ))
             )
             : (

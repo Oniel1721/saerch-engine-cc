@@ -5,5 +5,11 @@ interface Props {
 }
 
 export const ProductCard = ({ product }: Props)=>{
-    return null
+    return <figure role='product-card'>
+        <img src={product.photo} alt={product.title} />
+        <figcaption>
+            <h4>{product.title}</h4>
+            <p>{product.shortDescription}</p>
+        </figcaption>
+    </figure>
 }
