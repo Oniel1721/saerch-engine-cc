@@ -1,4 +1,5 @@
 import { useCallback, useRef } from "react"
+import './styles/SearchInput.css'
 
 interface Props {
     onSearch: (query: string)=>void
@@ -16,13 +17,19 @@ export const SearchInput = ({ onSearch }:Props)=>{
         onSearch(inputRef.current?.value ?? '')
     }, [])
 
-    return <div>
-        <input 
-            ref={inputRef as any} 
-            onKeyUp={handleKeyUp} 
-            role='search-input'
+    return <section className="search-bar">
+        <div className="search-input-container">
+            <input 
+                className="search-input"
+                ref={inputRef as any} 
+                onKeyUp={handleKeyUp} 
+                role='search-input'
 
-        />
-        <button onClick={handleClick} role='search-button'>Search</button>
-    </div>
+            />
+        </div>
+        <button 
+            className="search-button"
+            onClick={handleClick} 
+            role='search-button'><i/></button>
+    </section>
 }

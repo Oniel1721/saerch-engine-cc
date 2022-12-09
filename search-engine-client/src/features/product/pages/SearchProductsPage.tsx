@@ -3,6 +3,7 @@ import { SearchResults } from "../components"
 import { Searching } from "../components/Searching"
 import { SearchInput } from "../components/SearchInput"
 import { useSearchProducts } from "../hooks"
+import './styles/SearchProductsPage.css'
 
 export const SearchProductsPage = ()=>{
     const [ query, setQuery ] = useState('')
@@ -14,10 +15,11 @@ export const SearchProductsPage = ()=>{
     }
     
     return <main>
-        <header>
+        <header className="header">
+            <h1>Search engine</h1>
             <SearchInput onSearch={onSearch} />
         </header>
-        <section>
+        <section className="results-container">
             <Searching value={query} isSearching={isLoading} />
             {
                 products && <SearchResults products={products} />

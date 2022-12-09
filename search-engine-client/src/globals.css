@@ -8,10 +8,38 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-bg: #001925;
+  --second-bg: #042b3e;
+  --third-bg: #03a9f4;
+  --main-color: white;
+  --disable-color: #154e6b;
+}
+
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  font-family: "Courier New", Courier, monospace;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
   font-size: 62.5%;
+}
+
+body {
+  max-width: 100vw;
+  background-color: var(--main-bg);
+  color: var(--main-color);
+}
+
+#root {
+  width: 100%;
+  display: flex;
 }
 
 /* Sections

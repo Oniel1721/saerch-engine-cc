@@ -1,0 +1,12 @@
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-height: 100vh;
+}
+
+.go-back {
+  font-size: 2rem;
+  color: var(--main-color);
+}
